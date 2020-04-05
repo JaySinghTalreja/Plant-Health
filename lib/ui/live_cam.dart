@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 class LiveCam extends StatefulWidget {
   @override
-  _State createState() => _State();
+  _LiveCamState createState() => _LiveCamState();
 }
 
 class _LiveCamState extends State<LiveCam> {
@@ -9,7 +9,7 @@ class _LiveCamState extends State<LiveCam> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
-        child: new Text("Live Camera");
+        child: new Text("Live Cam Screen"),
       ),
     );
   }

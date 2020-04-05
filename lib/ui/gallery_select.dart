@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 class GallerySelect extends StatefulWidget {
   @override
-  _State createState() => _State();
+  _GallerySelectState createState() => _GallerySelectState();
 }
 
 class _GallerySelectState extends State<GallerySelect> {

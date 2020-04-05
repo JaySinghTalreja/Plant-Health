@@ -8,25 +8,33 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => new _HomeScreenState();
 }
 
+//--------->REFERENCE THE BOTTOM NAVIGATION BAR https://github.com/tunitowen/fancy_bottom_navigation<---------------
+
 class _HomeScreenState extends State<HomeScreen> {
 
-  int currentPage = 0;
+  int currentPage = 1;
   final List<Widget> _children = [
-    LiveCam(),
     GallerySelect(),
-    About(),
+    LiveCam(),
+    About()
   ];
 
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+
       title: "Home Screen",
+
+
       theme: new ThemeData(
           primaryColor: Colors.lightGreen,
           primarySwatch: Colors.blue,
           accentColor: Colors.red),
+
+          //Tu Remove the Debig Tag
       debugShowCheckedModeBanner: false,
-      body: _children[currentPage],
+      
+
       home: new Scaffold(
         bottomNavigationBar: FancyBottomNavigation(
           tabs: [
@@ -34,13 +42,21 @@ class _HomeScreenState extends State<HomeScreen> {
               TabData(iconData: Icons.camera, title: "Live Cam"),
               TabData(iconData: Icons.person, title: "About")
           ],
+
+          //Setting Defautl Screen To The Middle One
           initialSelection:1,
+
+          //Function to Switch Between Screen
           onTabChangedListener: (position) {
             setState(() {
               currentPage = position;
             });
           },
         ),
+
+        //List of Screen to Switch Between
+        body: _children[currentPage],
+
       ),
     );
   }
