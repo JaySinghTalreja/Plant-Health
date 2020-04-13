@@ -20,39 +20,31 @@ class _LiveCamState extends State<LiveCam> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title:"Live Cam Screen"
+      title:"Live Cam Screen",
+      //Theme for the current Screen
       theme : new ThemeData(
         primaryColor: Colors.lightGreen,
-        primarySwatch: Colors.blue,
-        accentColor: Colors.red
+        primarySwatch: Colors.indigo,
+        accentColor: Colors.lightGreen
+      ),
+        //Tu Remove the Debig Tag
+      debugShowCheckedModeBanner: false,
+
+      home : new Scaffold(
+        body: Center(
+          child: _image == null ? Text('No image selected.'): Image.file(_image),
         ),
-          //Tu Remove the Debig Tag
-        debugShowCheckedModeBanner: false,
-        home : new Scaffold(
-          body: Center(
-            child: _image == null ? Text('No image selected.'): Image.file(_image),
+        
+        //Changed Icon Color inside FLoatingActionButton By Wraping the icon in an IconTheme
+        floatingActionButton: FloatingActionButton(
+          onPressed: getImage,
+          tooltip: 'Pick Image',
+          child: new IconTheme(
+            data: new IconThemeData(color: Colors.white), 
+            child: new Icon(Icons.add_a_photo),
           ),
-          
-          theme: new ThemeData(
-              primaryColor: Colors.lightGreen,
-              primarySwatch: Colors.blue,
-              accentColor: Colors.red
-          ),
-
-          floatingActionButton : ProgressButton(
-            child: Text("Get Image"),
-            onPressed: getImage,
-            buttonState: ButtonState.normal,
-            backgroundColor: Theme.of(context).primaryColor,
-            progressColor: Theme.of(context).primaryColor,
-          ),
-
-          /*floatingActionButton: FloatingActionButton(
-            onPressed: getImage,
-            tooltip: 'Pick Image',
-            child: Icon(Icons.add_a_photo),
-          ),*/
-        );
-      );
+        ),
+      ),
+    );
   }
 }
