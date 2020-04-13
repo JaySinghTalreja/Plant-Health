@@ -35,13 +35,16 @@ class _LiveCamState extends State<LiveCam> {
           child: _image == null ? Text('No image selected.'): Image.file(_image),
         ),
         
-        //Changed Icon Color inside FLoatingActionButton By Wraping the icon in an IconTheme
-        floatingActionButton: FloatingActionButton(
+        //Changed Icon Color inside FLoatingActionButton By Wraping the icon in an IconTheme & Elevated it using Padding from bottom over 20 pixels
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(bottom: 20.0),
+          child: FloatingActionButton(
           onPressed: getImage,
           tooltip: 'Pick Image',
           child: new IconTheme(
             data: new IconThemeData(color: Colors.white), 
             child: new Icon(Icons.add_a_photo),
+          ),
           ),
         ),
       ),
