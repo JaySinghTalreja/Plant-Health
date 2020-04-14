@@ -52,6 +52,23 @@ flutter:
    - assets/loader2.gif
    - assets/noimageslogo.png
 
+  #Fonts
+  fonts:
+    - family: CrystalRadio
+      fonts:
+        - asset: fonts/crystal-radio-kit.ttf
+    - family: FutureSpore
+      fonts:
+        - asset: fonts/futurespore.ttf
+    - family: NeonClubMusic
+      fonts:
+        - asset: fonts/NEON-CLUB-MUSIC.otf
+        - asset: fonts/NEON-CLUB-MUSIC_bold.otf
+          weight: 700
+        - asset: fonts/NEON-CLUB-MUSIC_italic.otf
+          style: italic
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

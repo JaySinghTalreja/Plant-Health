@@ -24,7 +24,7 @@ class _LiveCamState extends State<LiveCam> {
     mainAxisSize: MainAxisSize.min,
     children: <Widget>[
       //Commented this to make the text appear at center
-      
+
       /*SizedBox(width: 20.0, height: 100.0),
       Text(
         "Be",
@@ -36,7 +36,7 @@ class _LiveCamState extends State<LiveCam> {
         onTap: () {
           print("Tap Event");
         },
-        text: ["Welcome", "To", "DIFFERENT"],
+        text: ["Welcome", "To", "Greenify"],
         textStyle: TextStyle(fontSize: 40.0, fontFamily: "Horizon"),
         textAlign: TextAlign.start,
         alignment: AlignmentDirectional.topStart // or Alignment.topLeft
@@ -55,6 +55,7 @@ class _LiveCamState extends State<LiveCam> {
 
   @override
   Widget build(BuildContext context) {
+    
     return new MaterialApp(
       title:"Live Cam Screen",
       //Theme for the current Screen
@@ -63,7 +64,8 @@ class _LiveCamState extends State<LiveCam> {
         primarySwatch: Colors.indigo,
         accentColor: Colors.lightGreen
       ),
-        //To Remove the Debug Tag
+      
+      //To Remove the Debug Tag
       debugShowCheckedModeBanner: false,
 
       home : new Scaffold(
