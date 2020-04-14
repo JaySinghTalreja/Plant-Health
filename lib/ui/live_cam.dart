@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 //Additional Imports
 import 'package:progress_button/progress_button.dart';
 import 'package:animated_widgets/animated_widgets.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class LiveCam extends StatefulWidget {
   @override
@@ -16,7 +17,33 @@ class _LiveCamState extends State<LiveCam> {
   
   //Bool for Shake Animated Widget
   bool _enabled = true;
-  var _imageLogo = new Image.asset('assets/noimageslogo.png');
+  //var _imageLogo = new Image.asset('assets/noimageslogo.png');
+
+  //Text Animation using Animated text kit
+  var _imageLogo = new Row(
+    mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+      //Commented this to make the text appear at center
+      
+      /*SizedBox(width: 20.0, height: 100.0),
+      Text(
+        "Be",
+        style: TextStyle(fontSize: 43.0),
+      ),
+      SizedBox(width: 20.0, height: 100.0),
+      */
+      RotateAnimatedTextKit(
+        onTap: () {
+          print("Tap Event");
+        },
+        text: ["Welcome", "To", "DIFFERENT"],
+        textStyle: TextStyle(fontSize: 40.0, fontFamily: "Horizon"),
+        textAlign: TextAlign.start,
+        alignment: AlignmentDirectional.topStart // or Alignment.topLeft
+      ),
+    ],
+  );
+
 
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
