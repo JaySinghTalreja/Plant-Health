@@ -36,8 +36,8 @@ class _LiveCamState extends State<LiveCam> {
         onTap: () {
           print("Tap Event");
         },
-        text: ["Welcome", "To", "Greenify"],
-        textStyle: TextStyle(fontSize: 40.0, fontFamily: "Horizon"),
+        text: ["Welcome", "To", "Greenify", "Welcome", "To", "Greenify", "Welcome", "To", "Greenify"],
+        textStyle: TextStyle(fontSize: 50.0,fontWeight: FontWeight.bold, fontFamily: "NeonClubMusic", color: Colors.lightGreen),
         textAlign: TextAlign.start,
         alignment: AlignmentDirectional.topStart // or Alignment.topLeft
       ),
