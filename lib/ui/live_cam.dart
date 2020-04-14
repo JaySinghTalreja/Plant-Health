@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+//Additional Imports
 import 'package:progress_button/progress_button.dart';
 import 'package:animated_widgets/animated_widgets.dart';
+
 class LiveCam extends StatefulWidget {
   @override
   _LiveCamState createState() => _LiveCamState();
