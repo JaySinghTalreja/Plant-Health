@@ -11,14 +11,16 @@ class LiveCam extends StatefulWidget {
 class _LiveCamState extends State<LiveCam> {
   //Image
   File _image;
-
+  
   //Bool for Shake Animated Widget
   bool _enabled = true;
+  var _imageLogo = new Image.asset('assets/noimageslogo.png');
 
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
     setState(() {
       _image = image;
+      _enabled = false;
     });
   }
 
@@ -32,12 +34,13 @@ class _LiveCamState extends State<LiveCam> {
         primarySwatch: Colors.indigo,
         accentColor: Colors.lightGreen
       ),
-        //Tu Remove the Debig Tag
+        //To Remove the Debug Tag
       debugShowCheckedModeBanner: false,
 
       home : new Scaffold(
         body: Center(
-          child: _image == null ? Text('No image selected.'): Image.file(_image),
+          //child: _image == null ? Text('No image selected.'): Image.file(_image),
+          child: _image == null ? _imageLogo : Image.file(_image),
         ),
         
         //Changed Icon Color inside FLoatingActionButton By Wraping the icon in an IconTheme & Elevated it using Padding from bottom over 20 pixels
@@ -56,21 +59,4 @@ class _LiveCamState extends State<LiveCam> {
     );
   }
 }
-
-ShakeAnimatedWidget(
-  enabled: this._enabled,
-  duration: Duration(milliseconds: 1500),
-  shakeAngle: Rotation.deg(z: 40),
-  curve: Curves.linear,
-  child: FloatingActionButton(
-    onPressed: getImage,
-    tooltip: 'Pick Image',
-    child: new IconTheme(
-      data: new IconThemeData(color: Colors.white), 
-      child: new Icon(Icons.add_a_photo),
-    ),
-  ),
-),
-/*
-*/
 
