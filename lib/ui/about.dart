@@ -18,14 +18,14 @@ class _AboutState extends State<About> {
 */
     final isIos = Theme.of(context).platform == TargetPlatform.iOS;
     const Widget aboutPage = AboutPage(
-      title: Text('About'),
+      //title: Text('About'),
       applicationVersion: 'Version {{ version }}, build #{{ buildNumber }}',
       applicationDescription: Text(
-        'Displays an About dialog, which describes the application.',
+        'About Developers',
         textAlign: TextAlign.justify,
       ),
       applicationIcon: FlutterLogo(size: 100),
-      applicationLegalese: '© David PHAM-VAN, {{ year }}',
+      //applicationLegalese: '© David PHAM-VAN, {{ year }}',
       children: <Widget>[
         MarkdownPageListTile(
           filename: 'README.md',
@@ -61,7 +61,7 @@ class _AboutState extends State<About> {
     if (isIos) {
     }
     return const MaterialApp(
-      title: 'About Demo (Material)',
+      title: 'About App',
       home: aboutPage,
     );
   }
