@@ -26,7 +26,7 @@ class _GallerySelectState extends State<GallerySelect> {
       body: Center(
         child: _image == null ? Text('No image selected.'): Image.file(_image),
       ),
-
+      
       //A Floating Action Button ! Alternative
       /*floatingActionButton: FloatingActionButton(
         onPressed: getImage,
