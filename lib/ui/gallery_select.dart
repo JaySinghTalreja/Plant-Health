@@ -26,11 +26,13 @@ class _GallerySelectState extends State<GallerySelect> {
       body: Center(
         child: _image == null ? Text('No image selected.'): Image.file(_image),
       ),
-      floatingActionButton: FloatingActionButton(
+
+      //A Floating Action Button ! Alternative
+      /*floatingActionButton: FloatingActionButton(
         onPressed: getImage,
         tooltip: 'Pick Image',
         child: Icon(Icons.add_a_photo),
-      ),
+      ),*/
     );
   }
 }

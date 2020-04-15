@@ -29,6 +29,7 @@ dependencies:
   progress_button: ^0.0.2
   animated_widgets: ^1.0.3
   animated_text_kit: ^2.0.0
+  argon_buttons_flutter: ^1.0.2
 
 dev_dependencies:
   flutter_test:
