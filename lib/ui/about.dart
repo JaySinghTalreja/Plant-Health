@@ -28,11 +28,11 @@ class _AboutState extends State<About> {
       //applicationLegalese: '© David PHAM-VAN, {{ year }}',
       children: <Widget>[
         MarkdownPageListTile(
-          filename: 'README.md',
+          //filename: 'README.md',
           title: Text('View Readme'),
           icon: Icon(Icons.all_inclusive),
         ),
-        MarkdownPageListTile(
+        /*MarkdownPageListTile(
           filename: 'CHANGELOG.md',
           title: Text('View Changelog'),
           icon: Icon(Icons.view_list),
@@ -56,6 +56,7 @@ class _AboutState extends State<About> {
           title: Text('Open source Licenses'),
           icon: Icon(Icons.favorite),
         ),
+        */
       ],
     );
     if (isIos) {
