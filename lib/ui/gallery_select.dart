@@ -14,11 +14,8 @@ class GallerySelect extends StatefulWidget {
 
 class _GallerySelectState extends State<GallerySelect> {
   //Image Variable
-  static File _image;
-
-  static File tempImage;
+  File _image;
   
-
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
@@ -57,13 +54,11 @@ class _GallerySelectState extends State<GallerySelect> {
               // size: loaderWidth ,
             ),
           ),
-          onTap: (startLoading, stopLoading, btnState) {
+          onTap: (startLoading, stopLoading, btnState) async {
             if(btnState == ButtonState.Idle){
               startLoading();
-              //Default Func
-              //await doNetworkRequest();
               //Delaying for the loading circle animation
-              //await new Future.delayed(const Duration(seconds : 2));
+              await new Future.delayed(const Duration(seconds : 2));
               getImage();
               stopLoading();
               //setImage(image);
