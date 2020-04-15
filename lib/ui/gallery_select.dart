@@ -1,6 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+
 //Additional Imports
 import 'package:image_picker/image_picker.dart';
 import 'package:animated_widgets/animated_widgets.dart';
