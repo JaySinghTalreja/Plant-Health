@@ -14,7 +14,21 @@ class _AboutState extends State<About> {
         children: <Widget>[
           Container(
             height: 350,
-            
+            width: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomLeft,
+                end:  Alignment.topRight,
+                colors:[
+                  Colors.green,
+                  Color.fromRGBO(108,211,115, 30),
+                  Colors.lightGreen,
+                ],
+              ),
+              image: DecorationImage(
+                image: AssetImage("assets/AL.png"),
+              ),
+            ),
           ),
         ],
       ),
