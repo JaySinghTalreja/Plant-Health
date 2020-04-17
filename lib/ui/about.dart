@@ -28,6 +28,16 @@ class _AboutState extends State<About> {
                   ],
                 ),
               ),
+              child: Column(
+                children: <Widget>[
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage("assets/editOne.png"),
+                    backgroundColor: Colors.white,
+                    //Image.asset("assets/editOne.png", width: 150, height: 150,),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
