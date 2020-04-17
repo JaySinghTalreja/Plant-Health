@@ -29,13 +29,17 @@ class _AboutState extends State<About> {
                 ),
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
+                  SizedBox(height: 80),
                   CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage("assets/editOne.png"),
+                    backgroundImage: AssetImage("assets/editThree.png"),
                     backgroundColor: Colors.white,
                     //Image.asset("assets/editOne.png", width: 150, height: 150,),
                   ),
+                  SizedBox(height: 25),
+                  Text("ABOUT DEVELOPERS",style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, fontFamily: "NeonClubMusic", color: Colors.white),)
                 ],
               ),
             ),

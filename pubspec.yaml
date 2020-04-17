@@ -57,6 +57,9 @@ flutter:
 
   #Fonts
   fonts:
+    - family: AmericanCaptain
+      fonts:
+        - asset: fonts/American_Captain.otf
     - family: CrystalRadio
       fonts:
         - asset: fonts/crystal-radio-kit.ttf
@@ -65,8 +68,8 @@ flutter:
         - asset: fonts/futurespore.ttf
     - family: NeonClubMusic
       fonts:
-        - asset: fonts/NEON-CLUB-MUSIC.otf
         - asset: fonts/NEON-CLUB-MUSIC_bold.otf
+        - asset: fonts/NEON-CLUB-MUSIC.otf
           weight: 700
         - asset: fonts/NEON-CLUB-MUSIC_italic.otf
           style: italic
