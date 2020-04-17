@@ -12,26 +12,44 @@ class _AboutState extends State<About> {
     return new Scaffold(
       body: new Column(
         children: <Widget>[
-          Container(
-            height: 350,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomLeft,
-                end:  Alignment.topRight,
-                colors:[
-                  Colors.green,
-                  Color.fromRGBO(108,211,115, 30),
-                  Colors.lightGreen,
-                ],
-              ),
-              image: DecorationImage(
-                image: AssetImage("assets/AL.png"),
+          ClipPath(
+            clipper: MyClipper(),
+            child: Container(
+              height: 350,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomLeft,
+                  end:  Alignment.topRight,
+                  colors:[
+                    Colors.green,
+                    Color.fromRGBO(108,211,115, 30),
+                    Colors.lightGreen,
+                  ],
+                ),
               ),
             ),
           ),
         ],
       ),
     );
+  }
+}
+
+class MyClipper extends CustomClipper<Path>{
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0, size.height - 80);
+    path.quadraticBezierTo(size.width/2, size.height, size.width, size.height-80);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    // TODO: implement shouldReclip
+    return null;
   }
 }
