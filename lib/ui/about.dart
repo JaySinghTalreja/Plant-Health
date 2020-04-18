@@ -39,11 +39,23 @@ class _AboutState extends State<About> {
                     //Image.asset("assets/editOne.png", width: 150, height: 150,),
                   ),
                   SizedBox(height: 25),
-                  Text("ABOUT DEVELOPERS",style: TextStyle(fontSize: 40, fontFamily: "AmericanCaptain", color: Colors.white),),
+                  Text("DEVELOPERS",style: TextStyle(fontSize: 40, fontFamily: "AmericanCaptain", color: Colors.white),),
                 ],
               ),
             ),
           ),
+          //Name of the Developer
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
+              ),
+              Expanded(
+                child: Text("Jay Singh Talreja", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
+              ),
+            ],
+          ),
+          Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
         ],
       ),
     );
