@@ -56,6 +56,7 @@ class _AboutState extends State<About> {
             ],
           ),
           Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          SizedBox(height: 10,),
           Row(
             children: <Widget>[
               Expanded(
@@ -67,6 +68,7 @@ class _AboutState extends State<About> {
             ],
           ),
           Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          SizedBox(height: 10,),
           Row(
             children: <Widget>[
               Expanded(
@@ -78,6 +80,7 @@ class _AboutState extends State<About> {
             ],
           ),
           Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          SizedBox(height: 10,),
           Row(
             children: <Widget>[
               Expanded(
