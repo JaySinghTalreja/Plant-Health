@@ -51,6 +51,39 @@ class _AboutState extends State<About> {
                 child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
               ),
               Expanded(
+                child: Text("Meghna Pandey", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
+              ),
+            ],
+          ),
+          Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
+              ),
+              Expanded(
+                child: Text("Heena Raj", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
+              ),
+            ],
+          ),
+          Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
+              ),
+              Expanded(
+                child: Text("Sarvesh Sharma", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
+              ),
+            ],
+          ),
+          Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
+              ),
+              Expanded(
                 child: Text("Jay Singh Talreja", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
               ),
             ],
