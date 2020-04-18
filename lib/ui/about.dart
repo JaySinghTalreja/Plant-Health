@@ -48,50 +48,50 @@ class _AboutState extends State<About> {
           Row(
             children: <Widget>[
               Expanded(
-                child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
+                child: Icon(Icons.person_pin, size: 50,color: Colors.orangeAccent,),
               ),
               Expanded(
                 child: Text("Meghna Pandey", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
               ),
             ],
           ),
-          Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          Divider(indent: 30.0,endIndent: 30.0,thickness: 2,),
           SizedBox(height: 10,),
           Row(
             children: <Widget>[
               Expanded(
-                child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
+                child: Icon(Icons.person_pin, size: 50,color: Colors.orangeAccent,),
               ),
               Expanded(
                 child: Text("Heena Raj", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
               ),
             ],
           ),
-          Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          Divider(indent: 30.0,endIndent: 30.0,thickness: 2,),
           SizedBox(height: 10,),
           Row(
             children: <Widget>[
               Expanded(
-                child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
+                child: Icon(Icons.person_pin, size: 50,color: Colors.orangeAccent,),
               ),
               Expanded(
                 child: Text("Sarvesh Sharma", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
               ),
             ],
           ),
-          Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          Divider(indent: 30.0,endIndent: 30.0,thickness: 2,),
           SizedBox(height: 10,),
           Row(
             children: <Widget>[
               Expanded(
-                child: Icon(Icons.person_pin, size: 50,color: Colors.lightGreen,),
+                child: Icon(Icons.person_pin, size: 50,color: Colors.orangeAccent,),
               ),
               Expanded(
                 child: Text("Jay Singh Talreja", style: TextStyle(fontSize: 20, fontFamily: "AmericanCaptain", color: Colors.lightGreen)),
               ),
             ],
           ),
-          Divider(indent: 50.0,endIndent: 50.0,thickness: 2,),
+          Divider(indent: 30.0,endIndent: 30.0,thickness: 2,),
         ],
       ),
     );
