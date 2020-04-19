@@ -1,4 +1,6 @@
-import 'dart:io';
+import 'dart:io' as Io;
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 //Additional Imports
@@ -13,7 +15,7 @@ class LiveCam extends StatefulWidget {
 
 class _LiveCamState extends State<LiveCam> {
   //Image
-  File _image;
+  Io.File _image;
   
   //Bool for Shake Animated Widget
   bool _enabled = true;
@@ -47,6 +49,10 @@ class _LiveCamState extends State<LiveCam> {
 
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
+    //Trial to Convert Image to Base64
+    final bytes = image.readAsBytesSync();
+    String img64 = base64Encode(bytes);
+    print(img64.substring(0, 100));
     setState(() {
       _image = image;
       _enabled = false;
