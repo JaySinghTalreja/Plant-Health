@@ -10,6 +10,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 
 //Imports for REST API 
 import 'package:async/async.dart';
+import 'package:http/http.dart' as http;
 
 class LiveCam extends StatefulWidget {
   @override
