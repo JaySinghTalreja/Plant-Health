@@ -8,6 +8,9 @@ import 'package:progress_button/progress_button.dart';
 import 'package:animated_widgets/animated_widgets.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
+//Imports for REST API 
+import 'package:async/async.dart';
+
 class LiveCam extends StatefulWidget {
   @override
   _LiveCamState createState() => _LiveCamState();
@@ -97,4 +100,3 @@ class _LiveCamState extends State<LiveCam> {
     );
   }
 }
-
