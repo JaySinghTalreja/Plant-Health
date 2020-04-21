@@ -52,7 +52,8 @@ class _LiveCamState extends State<LiveCam> {
     //Trial to Convert Image to Base64
     final bytes = image.readAsBytesSync();
     String img64 = base64Encode(bytes);
-    print(img64.substring(0, 100));
+    //print(img64.substring(0, 100));
+    print(img64);
     setState(() {
       _image = image;
       _enabled = false;
