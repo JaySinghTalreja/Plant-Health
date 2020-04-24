@@ -8,6 +8,10 @@ import 'package:animated_widgets/animated_widgets.dart';
 import 'package:argon_buttons_flutter/argon_buttons_flutter.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart'; //For Circular Loading Animation
 
+//Imports for REST API 
+import 'package:async/async.dart';
+import 'package:http/http.dart' as http;
+
 class GallerySelect extends StatefulWidget {
   @override
   _GallerySelectState createState() => _GallerySelectState();
@@ -16,11 +20,20 @@ class GallerySelect extends StatefulWidget {
 class _GallerySelectState extends State<GallerySelect> {
   //Image Variable
   Io.File _image;
-  
+  final String predictCall = "http://127.0.0.1:8000/API/predict";
+
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
     final bytes = image.readAsBytesSync();
-    String img64 = base64Encode(bytes);
+    //print(img64.substring(0, 100));
+    String img64 = "data:image/jpeg;base64," + base64Encode(bytes);
+    await http.post(predictCall, body: {
+      "plant_image": img64,
+    }).then((res) {
+      print(res);
+    }).catchError((err) {
+      print(err);
+    });
     //print(img64.substring(0, 100));
     print(img64);
     setState(() {

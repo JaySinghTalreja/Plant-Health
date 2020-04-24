@@ -59,8 +59,8 @@ class _LiveCamState extends State<LiveCam> {
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
     //Trial to Convert Image to Base64
     final bytes = image.readAsBytesSync();
-    String img64 = base64Encode(bytes);
-    http.post(predictCall, body: {
+    String img64 = "data:image/jpeg;base64," + base64Encode(bytes);
+    await http.post(predictCall, body: {
       "plant_image": img64,
     }).then((res) {
       print(res);
