@@ -50,7 +50,7 @@ class _LiveCamState extends State<LiveCam> {
     ],
   );
 
-
+  //Function to Select Image and convert it into base64 format
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
     //Trial to Convert Image to Base64

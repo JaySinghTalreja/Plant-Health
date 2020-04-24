@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'dart:io' as Io;
+import 'dart:convert';
 import 'package:flutter/material.dart';
 
 //Additional Imports
@@ -14,10 +15,14 @@ class GallerySelect extends StatefulWidget {
 
 class _GallerySelectState extends State<GallerySelect> {
   //Image Variable
-  File _image;
+  Io.File _image;
   
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    final bytes = image.readAsBytesSync();
+    String img64 = base64Encode(bytes);
+    //print(img64.substring(0, 100));
+    print(img64);
     setState(() {
       _image = image;
     });
