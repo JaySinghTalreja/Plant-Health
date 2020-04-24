@@ -18,9 +18,13 @@ class LiveCam extends StatefulWidget {
 }
 
 class _LiveCamState extends State<LiveCam> {
+
   //Image
   Io.File _image;
   
+  //API 
+  final String predictCall = "http://127.0.0.1:8000/API/predict";
+
   //Bool for Shake Animated Widget
   bool _enabled = true;
   //var _imageLogo = new Image.asset('assets/noimageslogo.png');
@@ -56,6 +60,13 @@ class _LiveCamState extends State<LiveCam> {
     //Trial to Convert Image to Base64
     final bytes = image.readAsBytesSync();
     String img64 = base64Encode(bytes);
+    http.post(predictCall, body: {
+      "plant_image": img64,
+    }).then((res) {
+      print(res);
+    }).catchError((err) {
+      print(err);
+    });
     //print(img64.substring(0, 100));
     print(img64);
     setState(() {
