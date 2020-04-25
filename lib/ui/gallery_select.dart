@@ -36,7 +36,7 @@ class _GallerySelectState extends State<GallerySelect> {
       _image = image;
     });
     //final http.Response response = await http.get('http://192.168.43.185:8000/API/');
-    /*final http.Response response = await http.post(
+    final http.Response response = await http.post(
       'http://192.168.43.185:8000/API/predict', 
       body: {
         "plant_image": img64,
@@ -89,10 +89,8 @@ class _GallerySelectState extends State<GallerySelect> {
     //print(img64.substring(0, 100));
     //print(img64);
     //await new Future.delayed(const Duration(seconds : 2));
-    */
-    setState(() {
-      _result = "Hello";      
-      //_result = varResult;
+    setState(() {    
+      _result = varResult;
       //_image = null;
       _image = image;
     });
