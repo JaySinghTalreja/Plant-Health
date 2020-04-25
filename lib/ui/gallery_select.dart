@@ -27,13 +27,13 @@ class _GallerySelectState extends State<GallerySelect> {
     final bytes = image.readAsBytesSync();
     //print(img64.substring(0, 100));
     String img64 = "data:image/jpeg;base64," + base64Encode(bytes);
-    final http.Response response = await http.get('http://192.168.43.185:8000/API/');
-    /*final http.Response response = await http.post(
+    //final http.Response response = await http.get('http://192.168.43.185:8000/API/');
+    final http.Response response = await http.post(
       'http://192.168.43.185:8000/API/', 
       body: {
       "plant_image": img64,
       }
-    );*/
+    );
     print(json.decode(response.body));
     //print(img64.substring(0, 100));
     print(img64);
