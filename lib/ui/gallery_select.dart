@@ -20,6 +20,7 @@ class GallerySelect extends StatefulWidget {
 class _GallerySelectState extends State<GallerySelect> {
   //Image Variable
   Io.File _image;
+  //String _result;
   //final String predictCall = "http://127.0.0.1:8000/API/predict";
 
   Future getImage() async {
@@ -39,7 +40,9 @@ class _GallerySelectState extends State<GallerySelect> {
     );
     */
     var predictionData = json.decode(response.body);
-    print(predictionData['message']);
+    String res = predictionData['message'];
+    print(res);
+
     //print(img64.substring(0, 100));
     //print(img64);
     await new Future.delayed(const Duration(seconds : 2));
