@@ -31,23 +31,61 @@ class _GallerySelectState extends State<GallerySelect> {
     setState(() {
       _image = image;
     });
-    final http.Response response = await http.get('http://192.168.43.185:8000/API/');
-    /*final http.Response response = await http.post(
+    //final http.Response response = await http.get('http://192.168.43.185:8000/API/');
+    final http.Response response = await http.post(
       'http://192.168.43.185:8000/API/predict', 
       body: {
       "plant_image": img64,
       }
     );
-    */
     var predictionData = json.decode(response.body);
-    String res = predictionData['message'];
-    print(res);
-
+    String res = predictionData['data'];
+    if(res.contains("Septoria_leaf_spot", 7)) {
+      //_result = "Septoria Leaf Spot";
+      print("Septoria Leaf Spot");
+    }
+    else if(res.contains("mosaic_virus", 7)){
+      //_result = "Mosaic Virus";
+      print("Mosaic Virus");
+    }
+    else if(res.contains("Late_blight", 7)) {
+      //_result = "Late Blight";
+      print("Late Blight");
+    }
+    else if(res.contains("Spider_mites", 7)) {
+      //_result = "Yellow Leaf Spider Mites";
+      print("Spider Mites");
+    }
+    else if(res.contains("Curl_Virus",7)){
+      //_result = "Curl Virus";
+      print("Curl Virus");
+    }
+    else if(res.contains("Bacterial_spot",7)) {
+      //_result = "Bacterial Spot";
+      print("Bacterial Spot");
+    }
+    else if(res.contains("Target_Spot", 7)) {
+      //_result = "Target Spot";
+      print( "Target Spot");
+    }
+    else if(res.contains("Leaf_Mold", 7)) {
+      //_result = "Leaf Mold";
+      print("Leaf Mold");
+    }
+    else if(res.contains("Early_blight", 7)) {
+      //_result = "Early Blight";
+      print("Early Blight");
+    }
+    else {
+      //_result = "Healthy";
+      print("Healthy");
+    }
+    //print(_result);
     //print(img64.substring(0, 100));
     //print(img64);
-    await new Future.delayed(const Duration(seconds : 2));
+    //await new Future.delayed(const Duration(seconds : 2));
     setState(() {
-      _image = null; 
+      _image = null;
     });
   }
 
