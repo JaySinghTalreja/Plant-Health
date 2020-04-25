@@ -27,18 +27,24 @@ class _GallerySelectState extends State<GallerySelect> {
     final bytes = image.readAsBytesSync();
     //print(img64.substring(0, 100));
     String img64 = "data:image/jpeg;base64," + base64Encode(bytes);
-    //final http.Response response = await http.get('http://192.168.43.185:8000/API/');
-    final http.Response response = await http.post(
+    setState(() {
+      _image = image;
+    });
+    final http.Response response = await http.get('http://192.168.43.185:8000/API/');
+    /*final http.Response response = await http.post(
       'http://192.168.43.185:8000/API/predict', 
       body: {
       "plant_image": img64,
       }
     );
-    print(json.decode(response.body));
+    */
+    var predictionData = json.decode(response.body);
+    print(predictionData['message']);
     //print(img64.substring(0, 100));
     //print(img64);
+    await new Future.delayed(const Duration(seconds : 2));
     setState(() {
-      _image = image;
+      _image = null; 
     });
   }
 
@@ -84,7 +90,7 @@ class _GallerySelectState extends State<GallerySelect> {
             }
             //tempImage = await ImagePicker.pickImage(source: ImageSource.gallery);
           },
-        ) : Image.file(_image) //Replacing Button with Image
+        ) : Image.asset('assets/ApiSpinLoad.gif',width: 100,height: 200,) //Image.file(_image) //Replacing Button with Image
       ),
 
       //A Floating Action Button Removed ! Alternative : Used An Argon Button
