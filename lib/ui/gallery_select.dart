@@ -35,16 +35,12 @@ class _GallerySelectState extends State<GallerySelect> {
     final http.Response response = await http.post(
       'http://192.168.43.185:8000/API/predict', 
       body: {
-      "plant_image": img64,
+        "plant_image": img64,
       }
     );
     var predictionData = json.decode(response.body);
     String res = predictionData['data'];
-    if(res.contains("Septoria_leaf_spot", 7)) {
-      //_result = "Septoria Leaf Spot";
-      print("Septoria Leaf Spot");
-    }
-    else if(res.contains("mosaic_virus", 7)){
+    if(res.contains("mosaic_virus", 7)){
       //_result = "Mosaic Virus";
       print("Mosaic Virus");
     }
@@ -55,6 +51,10 @@ class _GallerySelectState extends State<GallerySelect> {
     else if(res.contains("Spider_mites", 7)) {
       //_result = "Yellow Leaf Spider Mites";
       print("Spider Mites");
+    }
+    else if(res.contains("Septoria_leaf_spot", 7)) {
+      //_result = "Septoria Leaf Spot";
+      print("Septoria Leaf Spot");
     }
     else if(res.contains("Curl_Virus",7)){
       //_result = "Curl Virus";
