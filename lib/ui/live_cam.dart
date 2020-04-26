@@ -21,12 +21,12 @@ class _LiveCamState extends State<LiveCam> {
 
   //Image
   Io.File _image;
-  
+  String _result;
+
   //API 
   final String predictCall = "http://127.0.0.1:8000/API/predict";
 
-  //Bool for Shake Animated Widget
-  bool _enabled = true;
+  
   //var _imageLogo = new Image.asset('assets/noimageslogo.png');
 
   //Text Animation using Animated text kit
