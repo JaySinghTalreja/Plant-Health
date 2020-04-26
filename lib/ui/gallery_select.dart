@@ -28,6 +28,11 @@ class _GallerySelectState extends State<GallerySelect> {
   //final String predictCall = "http://127.0.0.1:8000/API/predict";
 
   Future getImage() async {
+    setState(() {
+      _image = null;
+      _result = null;
+    });
+
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
     final bytes = image.readAsBytesSync();
     //print(img64.substring(0, 100));
@@ -98,11 +103,8 @@ class _GallerySelectState extends State<GallerySelect> {
   }
 
   //Start New Activity
-  showDisease() {
-    setState(() {
-      _image = null;
-    });
-    Navigator.push(
+  showDisease() async {
+    await Navigator.push(
       context, 
       PageRouteBuilder(
         transitionDuration: Duration(seconds:2),
@@ -124,6 +126,10 @@ class _GallerySelectState extends State<GallerySelect> {
           }
       )
     );
+    setState(() {
+      _image = null;
+      _result = null;
+    });
   }
 
   @override
@@ -197,7 +203,6 @@ class _GallerySelectState extends State<GallerySelect> {
                 
                 //Start New Activity
                 showDisease();
-
                 stopLoading();
                 //setImage(image);
               }
