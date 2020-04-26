@@ -124,7 +124,7 @@ class _GallerySelectState extends State<GallerySelect> {
         pageBuilder: (BuildContext context,
           Animation<double> animation,
           Animation<double> secAnimation) {
-            return ResultScreen(dataDisease: _result,);
+            return ResultScreen(dataDisease: "Spectoria Disease",);
           }
       )
     );
@@ -176,7 +176,7 @@ class _GallerySelectState extends State<GallerySelect> {
             }
             //tempImage = await ImagePicker.pickImage(source: ImageSource.gallery);
           },
-        ) : (_result == null ? Image.asset('assets/ApiSpinLoad.gif',width: 100,height: 200,) : 
+        ) : (_result != null ? Image.asset('assets/ApiSpinLoad.gif',width: 100,height: 200,) : 
           ArgonButton(
             height: 50,
             width: 200,

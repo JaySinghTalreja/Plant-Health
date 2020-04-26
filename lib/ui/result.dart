@@ -14,12 +14,22 @@ class _ResultScreenState extends State<ResultScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Screen"),
+        title: Text("Results"),
       ),
       body: Center(
-        child: Text(
-          widget.dataDisease,
-          style: TextStyle(fontSize: 24),
+        child: new Column(
+          children: <Widget>[
+            SizedBox(height: 100),
+            Text(
+              "Disease Identified",
+              style: TextStyle(fontSize: 40, fontFamily:"FutureSpore", color:Colors.lightGreen),
+            ),
+            SizedBox(height: 55),
+            Text(
+              widget.dataDisease,
+              style: TextStyle(fontSize: 24),
+            ),
+          ],
         ),
       ),
     );
