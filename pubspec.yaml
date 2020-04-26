@@ -74,6 +74,9 @@ flutter:
           weight: 700
         - asset: fonts/NEON-CLUB-MUSIC_italic.otf
           style: italic
+    - family: BalooTamma
+      fonts:  
+        - asset: fonts/BalooTamma2-Medium.ttf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

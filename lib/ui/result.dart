@@ -27,8 +27,9 @@ class _ResultScreenState extends State<ResultScreen> {
             SizedBox(height: 55),
             Text(
               widget.dataDisease,
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 24, fontFamily: "BalooTamma", color: Colors.blueGrey),
             ),
+            Divider(indent: 10.0,endIndent: 10.0,thickness: 2,),
           ],
         ),
       ),
