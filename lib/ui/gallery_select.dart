@@ -23,7 +23,7 @@ class GallerySelect extends StatefulWidget {
 
 class _GallerySelectState extends State<GallerySelect> {
   //Image Variable
-  Io.File _image;
+  Io.File _image = null;
   String _result = null;
   //final String predictCall = "http://127.0.0.1:8000/API/predict";
 
@@ -43,9 +43,10 @@ class _GallerySelectState extends State<GallerySelect> {
       }
     );
     var predictionData = json.decode(response.body);
+    print(predictionData);
     String res = predictionData['data'];
     String varResult;
-    if(res.contains("mosaic_virus", 7)){
+    if(res.contains("mosaic_virus", 7)) {
       varResult = "Mosaic Virus";
       print("Mosaic Virus");
     }
@@ -98,6 +99,9 @@ class _GallerySelectState extends State<GallerySelect> {
 
   //Start New Activity
   showDisease() {
+    setState(() {
+      _image = null;
+    });
     Navigator.push(
       context, 
       PageRouteBuilder(
@@ -116,7 +120,7 @@ class _GallerySelectState extends State<GallerySelect> {
         pageBuilder: (BuildContext context,
           Animation<double> animation,
           Animation<double> secAnimation) {
-            return ResultScreen();
+            return ResultScreen(dataDisease: _result,);
           }
       )
     );

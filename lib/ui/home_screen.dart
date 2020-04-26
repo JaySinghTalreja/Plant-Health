@@ -14,9 +14,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int currentPage = 1;
   final List<Widget> _children = [
-    GallerySelect(),
-    LiveCam(),
-    About()
+    new GallerySelect(),
+    new LiveCam(),
+    new About()
   ];
 
   @override
