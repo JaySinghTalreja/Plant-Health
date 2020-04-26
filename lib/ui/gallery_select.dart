@@ -37,8 +37,8 @@ class _GallerySelectState extends State<GallerySelect> {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
     final bytes = image.readAsBytesSync();
     //print(img64.substring(0, 100));
-    String img64 = null;
-    img64 = "data:image/jpeg;base64," + base64Encode(bytes);
+    
+    String img64 = "data:image/jpeg;base64," + base64Encode(bytes);
     setState(() {
       _image = image;
     });
