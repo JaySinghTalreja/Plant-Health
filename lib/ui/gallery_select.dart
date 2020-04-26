@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:io' as Io;
 import 'dart:convert';
 import 'package:flutter/material.dart';
@@ -23,8 +24,8 @@ class GallerySelect extends StatefulWidget {
 
 class _GallerySelectState extends State<GallerySelect> {
   //Image Variable
-  Io.File _image = null;
-  String _result = null;
+  Io.File _image;
+  String _result;
   //final String predictCall = "http://127.0.0.1:8000/API/predict";
 
   Future getImage() async {
@@ -36,7 +37,8 @@ class _GallerySelectState extends State<GallerySelect> {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
     final bytes = image.readAsBytesSync();
     //print(img64.substring(0, 100));
-    String img64 = "data:image/jpeg;base64," + base64Encode(bytes);
+    String img64 = null;
+    img64 = "data:image/jpeg;base64," + base64Encode(bytes);
     setState(() {
       _image = image;
     });
@@ -126,10 +128,10 @@ class _GallerySelectState extends State<GallerySelect> {
           }
       )
     );
-    setState(() {
+    /*setState(() {
       _image = null;
       _result = null;
-    });
+    });*/
   }
 
   @override
